@@ -3,5 +3,19 @@ export const STRING = {
     SAHULAT: "Sahulat",
     LOGIN: "Login",
     REGISTER: "Register",
-    REGISTER_NOW: "Register Now"
+    REGISTER_NOW: "Register Now",
+    SHAPPING_FINANCIAL: "Shaping Financial",
+    FUTURES: "Futures",
+    WITH_CARE: "with Care",
+    HERO_PERA: "Interest-free loans to empower your dreams. Join thousands of families building a better tomorrow with Saylani Sahulat.",
+    GET_STARTED_BUTTON: "Get Started",
+    INTERESTE_RATE: "Interest Rate",
+    MAX_LOAN: "Max Loan",
+    LOAN_SCHEMES: "Our Loan Schemes",
+    TAILORED: "Tailored",
+    FINANCIAL_SOL: "Financial Solutions",
+    FOR_EVERY: "for Every Need",
+    CATEGORY_PERA: "Saylani Welfare provides interest-free loans across various categories to help you achieve your goals without any financial burden.",
+    APPLY_NOW: "Apply Now",
+    
 }
