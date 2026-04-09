@@ -3,7 +3,7 @@ import { STRING } from '../../constant/string';
 
 const HeroSec = () => {
     return (
-        <section className="relative min-h-screen bg-[#0b3d2e] pt-20 md:pt-32 pb-20 overflow-hidden">
+        <section className="relative min-h-screen bg-[#0b3d2e] pt-20 md:pt-24 pb-20 overflow-hidden">
 
             {/* Background Decorative Circles */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
