@@ -25,3 +25,5 @@ connectDB();
 app.listen(PORT, () => {
     console.log("Server is Running On Port", PORT)
 })
+
+export default app;
