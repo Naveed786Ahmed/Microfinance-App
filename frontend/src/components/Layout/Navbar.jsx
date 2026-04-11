@@ -1,6 +1,7 @@
 import { ChevronRight, Menu, X } from 'lucide-react';
 import React, { useState } from 'react'
 import { STRING } from '../../constant/string.js';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,8 @@ const Navbar = () => {
         { name: 'About Us', href: '#about' },
     ];
 
+    const navigate = useNavigate();
+
     return (
         <>
             <nav className='fixed w-full z-50 transition-all duration-300 bg-[#0b3d2e]/80 backdrop-blur-md border-b border-white/10'>
@@ -19,7 +22,7 @@ const Navbar = () => {
                     <div className='flex justify-between h-20 items-center'>
 
                         {/* 1. Left Side: Logo & Name */}
-                        <div className='flex items-center gap-3 group cursor-pointer'>
+                        <div onClick={() => navigate('/')} className='flex items-center gap-3 group cursor-pointer'>
                             <div className='w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:rotate-6 transition-transform'>
                                 <span className="text-[#0b3d2e] font-bold text-xl">S</span>
                             </div>
@@ -43,10 +46,10 @@ const Navbar = () => {
 
                         {/* 3. Right Side: Desktop Actions */}
                         <div className="hidden md:flex items-center gap-4">
-                            <button className="text-white font-medium hover:text-emerald-400 px-4 transition-colors cursor-pointer">
+                            <button onClick={() => navigate("/login")} className="text-white font-medium hover:text-emerald-400 px-4 transition-colors cursor-pointer">
                                 {STRING.LOGIN}
                             </button>
-                            <button className="bg-emerald-500 hover:bg-emerald-600 text-[#0b3d2e] px-6 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/30">
+                            <button onClick={() => navigate('/register')} className="bg-emerald-500 hover:bg-emerald-600 text-[#0b3d2e] px-6 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/30">
                                 {STRING.REGISTER} <ChevronRight size={18} />
                             </button>
                         </div>
