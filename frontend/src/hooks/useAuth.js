@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { login, register } from "../api/authService.js"
+import { changePassword, login, register } from "../api/authService.js"
 
 export const useAuth = () => {
     const [loading, setLoading] = useState(false);
@@ -24,21 +24,55 @@ export const useAuth = () => {
     const loginUser = async (credentials) => {
         setLoading(true);
         try {
-            const data = await login(credentials);
-            localStorage.setItem('token', data.token);
-            toast.success("Login Successful!");
+            const res = await login(credentials);
 
-            if (data.isFirstLogin) {
-                navigate('/change-password');
-            } else {
-                navigate('/dashboard');
+            const actualData = res.data;
+
+            if (actualData && actualData.token) {
+                localStorage.setItem('token', actualData.token);
+                localStorage.setItem('user', JSON.stringify({
+                    ...actualData.user,
+                    isFirstLogin: actualData.isFirstLogin
+                }));
+
+
+                if (actualData.isFirstLogin) {
+                    navigate('/change-password');
+                } else {
+                    navigate('/dashboard');
+                }
             }
         } catch (error) {
-            toast.error(error.response?.data?.message || "Login Failed!");
+            console.error("Login Error:", error);
+            toast.error(error.response?.data?.message || "Login Failed");
         } finally {
             setLoading(false);
         }
     };
 
-    return { registerUser, loading, loginUser };
+    const updatePassword = async (oldPassword, newPassword) => {
+        setLoading(true);
+        try {
+            const res = await changePassword({ oldPassword, newPassword });
+
+            if (res) {
+                toast.success("Password updated successfully!");
+
+                const user = JSON.parse(localStorage.getItem('user'));
+                const updatedUser = { ...user, isFirstLogin: false };
+                localStorage.setItem('user', JSON.stringify(updatedUser));
+
+                navigate('/dashboard');
+                return true;
+            }
+        } catch (error) {
+            console.error("Update Password Error:", error);
+            toast.error(error.response?.data?.message || "Failed to update password");
+            return false;
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return { registerUser, loginUser, updatePassword, loading };
 };

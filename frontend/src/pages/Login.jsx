@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Lock, Mail, ArrowRight, Eye, EyeOff } from 'lucide-react';
 import { STRING } from '../constant/string';
 import { useAuth } from '../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { loginUser, loading } = useAuth();
@@ -20,6 +21,8 @@ const Login = () => {
         loginUser(credentials);
     };
 
+    const navigate = useNavigate();
+
     return (
         <section className="min-h-[85vh] flex items-center justify-center py-12 px-4 bg-slate-50">
             <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-[2.5rem] shadow-2xl border border-slate-100">
@@ -30,10 +33,10 @@ const Login = () => {
                         <Lock size={30} />
                     </div>
                     <h2 className="text-3xl font-black text-gray-900">
-                        {STRING.WELCOME_BACK || "Welcome Back"}
+                        {STRING.WELCOME_BACK}
                     </h2>
                     <p className="mt-2 text-sm text-gray-500 font-medium">
-                        Log in with your registered email and temporary password
+                        {STRING.LOGIN_SUBTITILE}
                     </p>
                 </div>
 
@@ -95,22 +98,23 @@ const Login = () => {
                         {loading ? (
                             <div className="flex items-center gap-3">
                                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                <span>Securing Session...</span>
+                                <span>{STRING.LOGIN_BTN}</span>
                             </div>
                         ) : (
                             <>
-                                Sign In <ArrowRight className="ml-2 h-5 w-5" />
+                                {STRING.SIGN_IN} <ArrowRight className="ml-2 h-5 w-5" />
                             </>
                         )}
                     </button>
                 </form>
 
                 <div className="text-center text-sm font-medium text-gray-500">
-                    Not registered yet? <span
-                        onClick={() => window.location.href = '/register'}
+                    {STRING.NOT_REG_YET} 
+                    <span
+                        onClick={() => navigate("/register")}
                         className="text-emerald-600 font-bold cursor-pointer hover:underline"
                     >
-                        Create an account
+                     {STRING.CREATE_AN_AC}
                     </span>
                 </div>
             </div>

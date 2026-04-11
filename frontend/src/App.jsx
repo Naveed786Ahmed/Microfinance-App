@@ -5,6 +5,7 @@ import Navbar from './components/Layout/Navbar.jsx'
 import Register from './pages/Register.jsx'
 import { ToastContainer } from 'react-toastify'
 import Login from './pages/Login.jsx'
+import ChangePassword from './pages/ChangePassword.jsx'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path='/' element={<HomePage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/change-password" element={<ChangePassword />} />
           </Routes>
         </div>
       </div>
