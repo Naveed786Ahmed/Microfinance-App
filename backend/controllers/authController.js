@@ -25,6 +25,7 @@ export const registerUser = async (req, res) => {
             email,
             cnic,
             password: hashedPassword,
+            isFirstLogin: true,
         });
 
         const message = `Assalam-o-Alaikum ${name},\n\nYour account has been created for Saylani Qarze Hasana Program.\n\nYour temporary password is: ${tempPassword}\n\nPlease login and change your password.\n\nRegards,\nSaylani Welfare.`;
@@ -70,6 +71,7 @@ export const loginUser = async (req, res) => {
         res.status(200).json({
             message: "Login successful",
             token,
+            isFirstLogin: user.isFirstLogin,
             user: {
                 id: user._id,
                 name: user.name,
@@ -92,6 +94,8 @@ export const changePassword = async (req, res) => {
 
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(newPassword, salt);
+
+        user.isFirstLogin = false;
         
         await user.save();
         res.status(200).json({ message: "Password updated successfully" });
