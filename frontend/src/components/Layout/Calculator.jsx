@@ -90,7 +90,6 @@ const LoanCalculator = () => {
                     {/* Right Side: Results (The Final Summary) */}
                     <div className="lg:w-2/5 px-4 py-8 md:p-16 bg-white/5 backdrop-blur-sm flex items-center justify-center">
                         <div className="w-full max-w-sm bg-white rounded-[2.5rem] py-10 px-4 sm:p-10 shadow-2xl relative border border-emerald-100">
-                            {/* Badge */}
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-center px-6 py-1 rounded-full text-xs font-bold uppercase">
                                 {STRING.ESTIMATED_RES}
                             </div>

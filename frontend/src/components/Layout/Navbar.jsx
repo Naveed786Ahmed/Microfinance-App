@@ -31,7 +31,7 @@ const Navbar = () => {
                             </span>
                         </div>
 
-                        {/* 2. Center: Desktop Links (md screen se nazar ayenge) */}
+                        {/* 2. Center: Desktop Links */}
                         <div className="hidden md:flex items-center gap-8">
                             {navLinks.map((link) => (
                                 <a
