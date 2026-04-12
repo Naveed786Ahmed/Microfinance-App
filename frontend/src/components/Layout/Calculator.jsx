@@ -12,6 +12,20 @@ const LoanCalculator = () => {
 
     const navigate = useNavigate();
 
+    const handleProceed = () => {
+        const calculationData = {
+            category,
+            amount,
+            period,
+            deposit,
+            monthlyInstallment
+        };
+
+        localStorage.setItem('tempLoanRequest', JSON.stringify(calculationData));
+
+        navigate('/register');
+    };
+
     return (
         <section id="calculator" className="pb-24 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4">
@@ -47,7 +61,7 @@ const LoanCalculator = () => {
                                     <option className="bg-[#0b3d2e]" value="Business Startup Loans">{STRING.BUSINESS_LOANS}</option>
                                     <option className="bg-[#0b3d2e]" value="Education Loans">{STRING.EDUCATIONS_LOANS}</option>
                                 </select>
-                            </div> 
+                            </div>
 
                             {/* Loan Amount Slider */}
                             <div className="space-y-6">
@@ -116,7 +130,7 @@ const LoanCalculator = () => {
                                 </div>
                             </div>
 
-                            <button onClick={() => navigate('/register')} className="w-full mt-10 bg-emerald-600 hover:bg-emerald-700 text-white text-md sm:text-xl font-bold py-4 sm:py-4 px-4 rounded-2xl transition-all shadow-xl shadow-emerald-200 flex items-center justify-center gap-2 active:scale-95 cursor-pointer">
+                            <button onClick={handleProceed} className="w-full mt-10 bg-emerald-600 hover:bg-emerald-700 text-white text-md sm:text-xl font-bold py-4 sm:py-4 px-4 rounded-2xl transition-all shadow-xl shadow-emerald-200 flex items-center justify-center gap-2 active:scale-95 cursor-pointer">
                                 {STRING.PROCEED_BTN}  <ArrowRight size={20} />
                             </button>
 

@@ -12,7 +12,6 @@ const HomePage = () => {
       <Categories />
       <LoanCalculator />
       <About />
-      <Footer />
     </>
   )
 }
