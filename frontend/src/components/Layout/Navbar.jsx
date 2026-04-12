@@ -22,7 +22,7 @@ const Navbar = () => {
                     <div className='flex justify-between h-20 items-center'>
 
                         {/* 1. Left Side: Logo & Name */}
-                        <div onClick={() => navigate('/')} className='flex items-center gap-3 group cursor-pointer'>
+                        <div onClick={() => navigate('/')} className='flex items-center gap-3 group select-none cursor-pointer'>
                             <div className='w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:rotate-6 transition-transform'>
                                 <span className="text-[#0b3d2e] font-bold text-xl">S</span>
                             </div>
@@ -80,10 +80,10 @@ const Navbar = () => {
                             </a>
                         ))}
                         <div className="pt-4 flex flex-col gap-3">
-                            <button className="w-full py-3 text-white font-bold border border-white/20 rounded-xl">
+                            <button onClick={() => navigate("/login")} className="w-full py-3 text-white font-bold border border-white/20 rounded-xl">
                                 {STRING.LOGIN}
                             </button>
-                            <button className="w-full py-3 bg-emerald-500 text-[#0b3d2e] font-bold rounded-xl shadow-lg">
+                            <button onClick={() => navigate('/register')} className="w-full py-3 bg-emerald-500 text-[#0b3d2e] font-bold rounded-xl shadow-lg">
                                 {STRING.REGISTER_NOW}
                             </button>
                         </div>
