@@ -6,7 +6,7 @@
 
 **A high-performance, secure Microfinance application built for the SMIT Hackathon.**
 
-[**✨ Live Demo Link**](https://microfinance-app-u4l6.vercel.app/)
+[**Live Demo Link**](https://microfinance-app-u4l6.vercel.app/)
 
 ---
 
