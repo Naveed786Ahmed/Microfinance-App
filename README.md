@@ -13,11 +13,11 @@
 ## 💎 The Engineering Edge
 *This isn't just a UI; it's a full-cycle automated system designed for real-world impact.*
 
-* **📧 Automated Onboarding:** Integrated **Nodemailer** to trigger system-generated passwords directly to user emails upon registration.
-* **🛡️ Security First:** Implemented a **Force Password Reset** flow to ensure user security on the first login.
-* **🔑 Authentication & Auth:** Secure state management using **JWT (JSON Web Tokens)** for session persistence and protected routing.
-* **📊 Dynamic Admin Control:** A real-time dashboard that updates instantly based on application status (**Pending, Approved, Rejected**).
-* **📑 Smart Stepper UI:** A sleek, multi-step application form with validation, ensuring a seamless data entry experience.
+* **Automated Onboarding:** Integrated **Nodemailer** to trigger system-generated passwords directly to user emails upon registration.
+* **Security First:** Implemented a **Force Password Reset** flow to ensure user security on the first login.
+* **Authentication & Auth:** Secure state management using **JWT (JSON Web Tokens)** for session persistence and protected routing.
+* **Dynamic Admin Control:** A real-time dashboard that updates instantly based on application status (**Pending, Approved, Rejected**).
+* **Smart Stepper UI:** A sleek, multi-step application form with validation, ensuring a seamless data entry experience.
 
 ---
 
