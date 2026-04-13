@@ -2,6 +2,17 @@ import React from 'react'
 import { STRING } from '../../constant/string';
 
 const HeroSec = () => {
+
+    const scrollToCalculator = () => {
+        const element = document.getElementById('calculator');
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth', 
+                block: 'start'      
+            });
+        }
+    };
+
     return (
         <section className="relative min-h-screen bg-[#0b3d2e] pt-20 md:pt-24 pb-20 overflow-hidden">
 
@@ -21,7 +32,7 @@ const HeroSec = () => {
                             {STRING.HERO_PERA}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button className="bg-emerald-500 hover:bg-emerald-600 text-[#0b3d2e] px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl shadow-emerald-500/20">
+                            <button onClick={scrollToCalculator} className="bg-emerald-500 hover:bg-emerald-600 text-[#0b3d2e] px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl shadow-emerald-500/20">
                                 {STRING.GET_STARTED_BUTTON}
                             </button>
                         </div>
