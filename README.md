@@ -46,4 +46,4 @@
 ---
 
 ### 👨‍💻 Developed By
-Naveed Ahmed MERN Stack Developer | Problem Solver
+Naveed Ahmed MERN Stack Developer
