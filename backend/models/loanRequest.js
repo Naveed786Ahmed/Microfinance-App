@@ -33,7 +33,11 @@ const loanRequestSchema = new mongoose.Schema({
     ],
     personalInfo: {
         address: { type: String, required: true },
-        phone: { type: String, required: true }
+        phone: { type: String, required: true },
+        occupation: { type: String, required: true },
+        monthlyIncome: { type: Number, required: true },
+        monthlyExpenses: { type: Number, required: true },
+        existingLoans: { type: Number, default: 0 }
     },
     status: {
         type: String,
