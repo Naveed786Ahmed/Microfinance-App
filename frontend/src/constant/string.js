@@ -121,5 +121,18 @@ export const STRING = {
     LOCATION: "Location",
     DOWNLOAD_NOTE: "Note: Please bring your original CNIC and this slip for verification.",
     DIGITAL_SLIP: "Download Digital Slip",
+    BACK_BTN: "Back",
+    VERIFICATION: "Verification",
+    DETAILS: "Details",
+    FINANCIAL_STANDING: "Financial Standing",
+    OCCUPATION: "Occupation",
+    SEL_OCC: "Select Occupation",
+    SALARIED: "Salaried",
+    BUSINESS: "Business",
+    SELF_EMP: "Self-Employed",
+    MONTHLY_INCOME: "Monthly Income",
+    MONTHLY_EXPENCE: "Monthly Expenses",
+    DURATION: "Duration",
+    SOURCE: "Source",
     
 }

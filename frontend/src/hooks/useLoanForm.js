@@ -10,7 +10,13 @@ export const useLoanForm = () => {
         subcategory: '',
         amount: '',
         loanPeriod: '',
-        personalInfo: { address: '', phone: '' },
+        personalInfo: { 
+            address: '', 
+            phone: '',
+            occupation: '',
+            monthlyIncome: '',
+            monthlyExpenses: ''
+        },
         guarantors: [
             { name: '', email: '', location: '', cnic: '' },
             { name: '', email: '', location: '', cnic: '' }

@@ -35,7 +35,7 @@ const Dashboard = () => {
                         <div className="w-24 h-1.5 bg-emerald-500 mx-auto rounded-full mb-6"></div>
                     </div>
 
-                    <div className="bg-white rounded-[3rem] shadow-[0_30px_80px_-15px_rgba(0,0,0,0.08)] p-8 md:p-16 border border-slate-100">
+                    <div className="bg-white rounded-[3rem] shadow-[0_30px_80px_-15px_rgba(0,0,0,0.08)] p-2 md:p-16 border border-slate-100">
                         {status === 'new' ? (
                             <LoanStepper onComplete={handleSuccess} />
                         ) : (
